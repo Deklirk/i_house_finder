@@ -1,0 +1,27 @@
+</div>
+     <div class="row">
+         <div class="col-md-12">
+             <div class="aa-properties-content-bottom">
+                 <nav>
+                     <ul class="pagination">
+                         <li>
+                             {% if page.has_previous %}
+                             <a aria-label="Previous" href="?page={{ page.previous_page_number }}">
+                                <span aria-hidden="true">«</span>
+                             </a>
+                             {% endif %}
+                         </li>
+                         <li>Page {{ page.number }} of {{ page.paginator.num_pages }}.</li>
+                         <li>
+                             {% if page.has_next %}
+                             <a aria-label="Next" href="?page={{ page.next_page_number }}">
+                                 <span aria-hidden="true">»</span>
+                             </a>
+                             {% endif %}
+                         </li>
+                     </ul>
+                 </nav>
+             </div>
+         </div>
+     </div>
+</div>

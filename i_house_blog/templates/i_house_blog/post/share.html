@@ -1,0 +1,44 @@
+<!-- Start Proerty header  -->
+<section id="aa-property-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-property-header-inner">
+                    <h2>Blog Sharing</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="active">Share </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% extends "i_house_blog/base.html" %}
+{% block title %}Share a post{% endblock %}
+{% block content %}
+
+                    <!-- Respond box -->
+                    <div class="col-md-12">
+                      <div id="respond">
+                          {% if sent %}
+                            <h1>E-mail successfully sent</h1>
+                            <p>
+                            "{{ post.title }}" was successfully sent to {{ cd.to }}.
+                            </p>
+                          {% else %}
+                        <h2 class="reply-title">Leave a Comment for "{{ post.title }}"</h2>
+                          <hr>
+                        <form action="." method="post" id="commentform">
+                            {{ form.as_p }}
+                            {% csrf_token %}
+                            <input type="submit" value="Post Comment" class="aa-browse-btn" name="submit">
+
+
+                        </form>
+                          {% endif %}
+                      </div>
+                    </div>
+
+{% endblock %}
